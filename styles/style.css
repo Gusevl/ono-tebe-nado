@@ -44,7 +44,7 @@
   width: 290px;
   height: 98px;
   margin-left: auto;
-  padding-top: 12px;
+  padding-top: 6px;
   font-size: 18px;
   font-style: normal;
   line-height: 24px;
@@ -269,7 +269,7 @@
   align-items: center;
   width: 240px;
   height: 240px;
-  margin-top: 35px;
+  margin-top: 38px;
   margin-left: 47px;
   border-radius: 50%;
   background-color: black;
@@ -281,7 +281,7 @@
 }
 
 .about__title {
-  margin-top: 136px;
+  margin-top: 139px;
   margin-bottom: 102px;
   font-weight: 700;
   font-size: 40px;
@@ -289,11 +289,11 @@
 }
 
 .about__text p {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.003em;
 }
 
 .footer {
@@ -309,11 +309,12 @@
 
 .footer .address {
   margin: 0;
-  padding-top: 0px;
+  padding-top: 5px;
 }
 
 .footer ul {
   list-style: none;
+  margin-top: 4px;
 }
 
 .footer__social-list {
