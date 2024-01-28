@@ -37,6 +37,7 @@
 
 .header__links-list-item_no-bullit {
   margin-left: 0px;
+  list-style: none;
 }
 
 .header__link_active {
@@ -44,8 +45,8 @@
 }
 
 .address {
-  width: 290px;
-  height: 98px;
+  min-width: 290px;    
+  /* правильно ли */
   margin-left: auto;
   padding-top: 6px;
   font-size: 18px;
@@ -53,26 +54,34 @@
   line-height: 24px;
 }
 
-.address a {
-  border-bottom: 1px solid black;
-  text-decoration: none;
-}
-
 .contact_link {
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
   text-decoration-style: solid;
 }
 
 .cover {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 1100px;
-  height: 757px;
+  min-height: 757px;
   margin-top: 94px;
   background: url(../images/lotus-flower.png);
   background-color: yellow;
   background-size: cover;
 }
 
-.cover::before {
+.cover__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px 51px 78px;
+  
+}
+
+.with-overlay::before {
   content: "";
   position: absolute;
   top: 0;
@@ -84,15 +93,19 @@
 }
 
 .cover__title {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+  position: relative; 
+  z-index: 2; 
+  display: flex;
+  flex-direction: column;
+  height: 355px;
+  padding: 165px 20px 0 50px;
   color: #fff;
   font-size: 100px;
+  
 }
 
 
-.cover__title span {
+.cover__title .aligned-text {
   letter-spacing: 30px;
 }
 
@@ -101,10 +114,8 @@
 }
 
 .aligned-text {
-  position: absolute;
-  top: 165px;
-  left: 50px;
   letter-spacing: 15px;
+  text-transform: uppercase;
 }
 
 .aligned-text span {
@@ -112,21 +123,19 @@
 }
 
 .aligned-text_center {
-  position: absolute;
-  top: 292px;
-  left: 336px;
+  margin-right: 60px;
+  line-height: 137px;
+  text-align: center;
+
 }
 
 .aligned-text_right {
-  position: absolute;
-  right: 21px;
-  bottom: 228px;
+  line-height: 103px;
+  text-align: right;
 }
 
 .cover__description-text {
-  position: absolute;
-  bottom: 62px;
-  left: 80px;
+
   z-index: 2;
   color: #fff;
   font-weight: 400;
@@ -136,12 +145,9 @@
 }
 
 .bet-button {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
   z-index: 2;
   border: 1px solid #fff;
-  padding: 12px 32px 11px 31px;
+  padding: 12px 32px;
   color: #fff;
   font-weight: 500;
   font-size: 22px;
@@ -151,6 +157,8 @@
 
 .bet-button:hover {
   color: aqua;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .lots {
@@ -177,7 +185,7 @@
 .lots__card-list-item {
   flex-grow: 1;
   width: 334px;
-  height: 563px;
+  min-height: 563px;
 }
 
 
@@ -188,28 +196,15 @@
   text-decoration: none;
 }
 
-.card {
+  .card {
   display: flex;
   flex-direction: column;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: space-between;
+  padding: 51px 40px 48px 40px;
 }
 
 .card__title {
-  position: absolute;
-  top: 51px;
-  left: 40px;
   z-index: 2;
-  padding-right: 20px;
   color: #fff;
   font-weight: 700;
   font-size: 22px;
@@ -220,11 +215,9 @@
 }
 
 .card__text {
-  position: absolute;
   bottom: 48px;
   left: 40px;
   z-index: 2;
-  padding-right: 40px;
   color: #fff;
   font-weight: 400;
   font-size: 20px;
@@ -235,18 +228,24 @@
   width: 100%;
   height: 100%;
   background: url(../images/card-lot-01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card_type_book {
   width: 100%;
   height: 100%;
   background: url(../images/card-lot-02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card_type_picture {
   width: 100%;
   height: 100%;
   background: url(../images/card-lot-03.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .lots__look-more-link {
@@ -296,12 +295,13 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: 0.003em;
+  word-spacing: 2px;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 88px;
   padding: 0 50px;
 }
 
@@ -316,8 +316,8 @@
 }
 
 .footer ul {
-  list-style: none;
   margin-top: 4px;
+  list-style: none;
 }
 
 .footer__social-list {
